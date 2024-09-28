@@ -1,5 +1,5 @@
 from django.db import models
-from apps.factions.models import Faction
+from apps.Faction.models import Faction
 
 # Create your models here.
 class Pirate(models.Model):
