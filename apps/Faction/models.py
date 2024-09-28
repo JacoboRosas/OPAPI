@@ -4,7 +4,7 @@ from django.db import models
 
 class Faction(models.Model):
     rank = models.CharField(max_length=20)
-    faction_name=models.CharField(max_lenght=20)
+    faction_name=models.CharField(max_length=20)
     # We can do this instead
 
     # current_faction = models.BooleanField()
