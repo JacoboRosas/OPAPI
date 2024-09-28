@@ -1,6 +1,6 @@
 from django.db import models
-from apps.Ability.models import Ability
 from apps.Arc.models import Arc
+from apps.Ability.models import Ability
 from apps.Bounty.models import Bounty
 from apps.DevilFruit.models import DevilFruit
 from apps.Faction.models import Faction
