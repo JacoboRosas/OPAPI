@@ -35,7 +35,7 @@ class Character(models.Model):
     factions = models.ManyToManyField(Faction)
     hakis = models.ManyToManyField(Haki)
     
-def __str__(self):
-    return self.name
+    def __str__(self):
+        return self.name
 
     
