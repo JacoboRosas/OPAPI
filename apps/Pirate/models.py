@@ -1,5 +1,5 @@
 from django.db import models
-from apps.factions.models import Faction
+from apps.Faction.models import Faction
 
 # Create your models here.
 class Pirate(models.Model):
@@ -18,4 +18,4 @@ class Pirate(models.Model):
     ship_name = models.CharField(max_length=40)
 
     def __str__(self):
-        return f"{self.crew_name} of the {self.ship_name}"
+        return self.crew_name
