@@ -37,6 +37,17 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'apps.Ability',
+    'apps.Arc',
+    'apps.Bounty',
+    'apps.Character',
+    'apps.DevilFruit',
+    'apps.Faction',
+    'apps.Haki',
+    'apps.Location',
+    'apps.Marine',
+    'apps.Pirate',
+    'apps.Sea',
 ]
 
 MIDDLEWARE = [
