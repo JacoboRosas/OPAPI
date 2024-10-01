@@ -4,7 +4,7 @@ from django.db import models
 
 class Faction(models.Model):
     # ------- We import any attributes here (primary keys are created by default) ------- # 
-    rank = models.CharField(max_length=20)
+    # Delete "rank" attribute, it shouldn't be here, but rather, in the child tables.
     faction_name=models.CharField(max_length=20)
     # We can do this instead
 
