@@ -30,15 +30,15 @@ class Character(models.Model):
     birthday = models.DateField()
     height = models.DecimalField(decimal_places=2, max_digits=4)
     location = models.ForeignKey(Location, on_delete=models.CASCADE)
-    abilitys = models.ManyToManyField(Ability)
     arcs = models.ManyToManyField(Arc)
     
     # ------- We import any MANY TO MANY relationship here ------- #
     # Removed bounty many to many relationship. This was not intended.
+    abilitys = models.ManyToManyField(Ability)
     devil_fruits = models.ManyToManyField(DevilFruit)
     factions = models.ManyToManyField(Faction)
     hakis = models.ManyToManyField(Haki)
-    
+
     # ------- We define here how the data entry will be shown ------- #
     def __str__(self):
         return self.name
