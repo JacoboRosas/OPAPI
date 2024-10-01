@@ -2,7 +2,8 @@ from django.db import models
 from apps.Arc.models import Arc
 from apps.Ability.models import Ability
 from apps.Arc.models import Arc
-from apps.Bounty.models import Bounty
+# Removed bounty import, this was not intended. If I left any import here related to bounty, while I was importing the character to the bounty
+# app, there would be an error basically making a loop with importation as the main issue. So just take that into account.
 from apps.DevilFruit.models import DevilFruit
 from apps.Faction.models import Faction
 from apps.Haki.models import Haki
@@ -21,6 +22,7 @@ CHOICESTATUS = (
     ('unknwon' , 'Unknown'),
 )
 class Character(models.Model):
+    # ------- We import any attributes here (primary keys are created by default) ------- #
     name = models.CharField(max_length=50, null=False, blank=False)
     status = models.CharField(max_length=10, choices=CHOICESTATUS, blank=False, null=False)
     age = models.IntegerField(blank=False, null=False)
@@ -30,11 +32,14 @@ class Character(models.Model):
     location = models.ForeignKey(Location, on_delete=models.CASCADE)
     abilitys = models.ManyToManyField(Ability)
     arcs = models.ManyToManyField(Arc)
-    bountys = models.ManyToManyField(Bounty)
+    
+    # ------- We import any MANY TO MANY relationship here ------- #
+    # Removed bounty many to many relationship. This was not intended.
     devil_fruits = models.ManyToManyField(DevilFruit)
     factions = models.ManyToManyField(Faction)
     hakis = models.ManyToManyField(Haki)
     
+    # ------- We define here how the data entry will be shown ------- #
     def __str__(self):
         return self.name
 

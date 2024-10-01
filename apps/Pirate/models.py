@@ -13,9 +13,12 @@ class Pirate(models.Model):
 
     #Another note, we don't need to add the _id at the end of the foreign key
     #this is because django already does it by itself, and creates a column like <field_name>_id
+    
+    # ------- We import any attributes here (primary keys are created by default) ------- #
     faction = models.ForeignKey(Faction, on_delete=models.CASCADE)
     crew_name = models.CharField(max_length=40)
     ship_name = models.CharField(max_length=40)
 
+    # ------- We define here how the data entry will be shown ------- #
     def __str__(self):
         return self.crew_name
