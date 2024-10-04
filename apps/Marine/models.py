@@ -1,5 +1,4 @@
 from django.db import models
-from apps.Faction.models import Faction
 
 # Create your models here.
 class Marine(models.Model):
@@ -15,11 +14,10 @@ class Marine(models.Model):
     #this is because django already does it by itself, and creates a column like <field_name>_id
     
     # ------- We import any attributes here (primary keys are created by default) ------- #
-    faction = models.ForeignKey(Faction, on_delete=models.CASCADE)
-    rank = models.CharField(max_length=20)
+    rank_name = models.CharField(max_length=20)
 
     # Se hace esto para que no retorne ppr default el nombre object, sino para que retorne el nombre del modelo + el contenido del atributo al que hace referencia
     # en este caso, rank
     # ------- We define here how the data entry will be shown ------- #
     def __str__(self):
-        return self.rank
+        return self.rank_name
