@@ -1,0 +1,1 @@
+[{"model": "Faction.faction", "pk": 1, "fields": {"faction_name": "Pirate"}}, {"model": "Faction.faction", "pk": 2, "fields": {"faction_name": "Marine"}}, {"model": "Faction.faction", "pk": 3, "fields": {"faction_name": "Civilian"}}, {"model": "Faction.faction", "pk": 4, "fields": {"faction_name": "Revolutionary Army"}}]
