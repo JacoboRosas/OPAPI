@@ -1,1 +1,0 @@
-[{"model": "Ship.ship", "pk": 1, "fields": {"ship_name": "Going Merry"}}, {"model": "Ship.ship", "pk": 9, "fields": {"ship_name": "Thousand Sunny"}}, {"model": "Ship.ship", "pk": 10, "fields": {"ship_name": "Piece of Spadille"}}, {"model": "Ship.ship", "pk": 11, "fields": {"ship_name": "Moby Dick"}}, {"model": "Ship.ship", "pk": 12, "fields": {"ship_name": "Saber of Xebec"}}]
