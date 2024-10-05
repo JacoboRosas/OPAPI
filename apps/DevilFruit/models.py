@@ -7,8 +7,8 @@ class DevilFruit(models.Model):
     df_name = models.CharField(max_length=50)
     df_jp_name = models.CharField(max_length=50)
     category = models.CharField(max_length=50)
-    current_owner = models.BooleanField(default=True)
-    awakened = models.BooleanField()
+    #current_owner = models.BooleanField(default=True)
+    #awakened = models.BooleanField()
 
     # ------- We define here how the data entry will be shown ------- #
     def __str__(self):
