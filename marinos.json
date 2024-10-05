@@ -1,1 +1,0 @@
-[{"model": "Marine.marine", "pk": 1, "fields": {"rank_name": "Soldier"}}, {"model": "Marine.marine", "pk": 2, "fields": {"rank_name": "Captain"}}, {"model": "Marine.marine", "pk": 3, "fields": {"rank_name": "Vice-Admiral"}}, {"model": "Marine.marine", "pk": 4, "fields": {"rank_name": "Admiral"}}, {"model": "Marine.marine", "pk": 5, "fields": {"rank_name": "Fleet Admiral"}}]
