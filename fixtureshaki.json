@@ -1,0 +1,1 @@
+[{"model": "Haki.haki", "pk": 2, "fields": {"name": "Armament Haki", "JPname": "Busoshoku no Haki"}}, {"model": "Haki.haki", "pk": 3, "fields": {"name": "Observation Haki", "JPname": "Kenbunshoku no Haki"}}, {"model": "Haki.haki", "pk": 4, "fields": {"name": "Conqueror's Haki", "JPname": "Haoshoku no Haki"}}]
