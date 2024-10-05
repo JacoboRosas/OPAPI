@@ -4,9 +4,9 @@ from django.db import models
 
 class DevilFruit(models.Model):
     # ------- We import any attributes here (primary keys are created by default) ------- #
-    df_name = models.CharField(max_length=20)
-    df_jp_name = models.CharField(max_length=20)
-    category = models.CharField(max_length=20)
+    df_name = models.CharField(max_length=50)
+    df_jp_name = models.CharField(max_length=50)
+    category = models.CharField(max_length=50)
     current_owner = models.BooleanField(default=True)
     awakened = models.BooleanField()
 
