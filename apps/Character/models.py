@@ -28,18 +28,18 @@ class Character(models.Model):
     status = models.CharField(max_length=10, choices=CHOICESTATUS, blank=False, null=False)
     age = models.IntegerField(blank=False, null=False)
     race = models.CharField(max_length=30, choices=CHOICESRACE, null=False, blank=False, default='Human')
-    birthday = models.DateField()
+    birthday = models.CharField(max_length=20)
     height = models.DecimalField(decimal_places=2, max_digits=4)
     location = models.ForeignKey(Location, on_delete=models.CASCADE)
 
     
     # ------- We import any MANY TO MANY relationship here ------- #
     # Removed bounty many to many relationship. This was not intended.
-    arc = models.ManyToManyField(Arc)
-    ability = models.ManyToManyField(Ability)
-    devil_fruit = models.ManyToManyField(DevilFruit)
-    faction = models.ManyToManyField(Faction)
-    haki = models.ManyToManyField(Haki)
+    arc = models.ManyToManyField(Arc,blank=True)
+    ability = models.ManyToManyField(Ability,blank=True)
+    devil_fruit = models.ManyToManyField(DevilFruit,blank=True)
+    faction = models.ManyToManyField(Faction, blank=True)
+    haki = models.ManyToManyField(Haki,blank=True)
     pirate = models.ManyToManyField(Pirate, blank=True)
     marine = models.ManyToManyField(Marine, blank=True)
 
