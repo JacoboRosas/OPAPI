@@ -1,1 +1,1 @@
-[{"model": "DevilFruit.devilfruit", "pk": 1, "fields": {"df_name": "porno porno no mi", "df_jp_name": "se", "category": "logia", "current_owner": true, "awakened": true}}]
+[{"model": "DevilFruit.devilfruit", "pk": 1, "fields": {"df_name": "porno porno no mi", "df_jp_name": "se", "category": "logia", "current_owner": true, "awakened": true}}, {"model": "DevilFruit.devilfruit", "pk": 2, "fields": {"df_name": "Flame-Flame Fruit", "df_jp_name": "Mera Mera no Mi", "category": "Logia", "current_owner": false, "awakened": false}}]
