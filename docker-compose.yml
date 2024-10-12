@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    volumes:
+      - .:/app  # This maps your local directory to the app directory in the container
+    ports:
+      - "8000:8000"
+    environment:
+      - DEBUG=1
+    
+# Note: No database service is needed for SQLite
