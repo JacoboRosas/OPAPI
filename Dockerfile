@@ -1,6 +1,9 @@
 # Use the official Python image from the Docker Hub
 FROM python:3.12.3-slim
 
+# Install PostgreSQL development packages
+RUN apt-get update && apt-get install -y libpq-dev gcc && apt-get clean
+
 # Set the working directory in the container
 WORKDIR /app
 

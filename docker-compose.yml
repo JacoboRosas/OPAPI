@@ -1,13 +1,54 @@
-version: '3.8'
+#We define the version of the Docker Compose file format. 
+#version: '3.8'
+#Apparently we don't need to do this in recent updates, but i will still keep it here
 
+#Services defines the containers that Docker Compose will create, so each service represents a different container, in this case, db and web.
 services:
-  web:
-    build: .
+  db:
+    #We first define the image that will be used to create the PostgreSQL container
+    #Docker pulls this image from Docker Hub if not available in our system
+    image: postgres:17
     volumes:
-      - .:/app  # This maps your local directory to the app directory in the container
+    #We define a Docker volume here, this is where data will persist!
+    #postgres_data is the name of the volume that Docker will use to store PostgreSQL data
+    #While the path shown here is where the postgresql database will store its data files
+      - postgres_data:/var/lib/postgresql/data/
+    #The enviroment section defines enviroment variables that will be passed into the container.
+    #These variables are required by the postgres image to configure the database settings.
+    #So basically, we need them to setup the Postgres instance
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    #We map the host port (in this case, our machine or pc port) to the container port, so basically we're doing
+    #5432:5432
+    ports:
+      - "5432:5432"
+
+  #We define the Django service now
+  web:
+  #When doing build: ., we are telling the docker-compose file to build an image from a Dockerfile where the docker-compose file is.
+    build: .
+    #We define the command to run the web app
+    command: python manage.py runserver 0.0.0.0:8000
+    #We use our current container (there's a dot at the start of ./app) in the /app directory
+    volumes:
+      - .:/app
+    #Same as the db container, we expose our port 8000 to the container port 8000
     ports:
       - "8000:8000"
+    #We stablish a dependance on another service, so basically web service depends on the db service.
+    depends_on:
+      - db
     environment:
-      - DEBUG=1
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_HOST: ${POSTGRES_HOST}
+      POSTGRES_PORT: ${POSTGRES_PORT}
+
+#We define the volume here, basically we're saying, hey Docker, create and use this, and it is used the db service
+volumes:
+  postgres_data:
     
 # Note: No database service is needed for SQLite
