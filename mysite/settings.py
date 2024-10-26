@@ -67,7 +67,7 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR,"Templates")], # Colocar aqui la carpeta donde se encuentran los templates que vamos a utilizar
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -96,7 +96,7 @@ DATABASES = {
         'PORT':os.getenv('POSTGRES_PORT'),
     }
 }
-
+print(f"DB: {os.getenv('POSTGRES_DB')}, USER: {os.getenv('POSTGRES_USER')}, HOST: {os.getenv('POSTGRES_HOST')}")
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
