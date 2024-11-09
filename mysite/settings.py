@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'apps.Pirate',
     'apps.Sea',
     'apps.Ship',
+    'apps.main',
 ]
 
 MIDDLEWARE = [
